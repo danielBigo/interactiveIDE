@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="./embedstyle.css">
+<style id="mystyle">
+</style>
+</head>
+<body>
+
+<div class="flex-container">
+
+<div class="M4InVi3w" id="printchatbox"></div>
+
+
+<div class="ZindeX">
+	<div id="drag-2" class="drag-drop t0p">
+	<span class="coD4Tittle">CSS</span>	
+		<textarea class="flex-container-herit text-code" id="chatinputStyle"></textarea>
+	</div>
+	<div id="drag-1" class="drag-drop b0T0M">
+	<span class="coD4Tittle">HTML</span>
+			<textarea class="flex-container-herit text-code" id="chatinputBody"></textarea>
+	</div>
+</div>
+
+</div>
+
+<!--<input type="button" name="commencer" value="Show Text Field" onclick="onButtonClick()">-->
+
+
+<script src="./jquery-1.12.4.js"></script>
+<script src="./jquery-ui.js"></script>
+<script>
+var inputBox = document.getElementById('chatinputBody');
+var inputStyle = document.getElementById('chatinputStyle');
+
+inputBox.onkeyup = function(){
+    document.getElementById('printchatbox').innerHTML = inputBox.value;
+}
+inputStyle.onkeyup = function(){
+	document.getElementById('mystyle').innerHTML = inputStyle.value;
+}
+ 
+ $( function() {
+    $( "#drag-1" ).draggable();
+	$( "#drag-2" ).draggable();
+	
+	var bringFr0nt = { "z-index" : "110","transition":"z-index .01s"};
+	var bringB4ack = { "z-index" : "109"};
+  $("#drag-2").click(function(){
+	$(this).css(bringFr0nt);
+	$("#drag-1").css(bringB4ack);
+  });
+  
+	$("#drag-1").click(function(){
+	$(this).css(bringFr0nt);
+	$("#drag-2").css(bringB4ack);
+  });
+	
+  } );
+  
+
+
+
+
+/*function onButtonClick(){
+  document.getElementById('chatinput').className="show";
+}*/
+
+</script>
+</body>
+
+
+</html>
